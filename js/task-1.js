@@ -1,3 +1,4 @@
+// Variant 1
 // function isEnoughCapacity(products, containerSize) {
 //     let totalProducts = 0;
 //     for (let product in products) {
@@ -9,33 +10,19 @@
 //     return totalProducts <= containerSize;
 // }
 
-
+// Variant 2
 function isEnoughCapacity(products, containerSize) {
-let totalProdAmont = 0;
+let totalProdAmount = 0;
 let singleProdAmount = Object.values(products); 
-    for (const product in products){
-        totalProdAmont += singleProdAmount;
-    }
-    if (totalProdAmont <= containerSize) {
-        console.log("Ok");
+    for (const product of singleProdAmount) {
+        totalProdAmount += product;
+        }
+    if (totalProdAmount <= containerSize) {
+        return true;
     } else {
-        console.log("NOk");
+        return false;
     }
 };
-
-// function isEnoughCapacity(products, containerSize) {
-//     let totalProdAmont = 0;
-
-//     for (let product in products){
-//         totalProdAmont += Object.values(product);
-//     }
-//     ;
-//         if (totalProdAmont <= containerSize) {
-//             console.log("Ok");
-//         } else {
-//             console.log("NOk");
-//         }
-//     };
 
 
 console.log(
