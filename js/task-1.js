@@ -1,25 +1,55 @@
-// ----------------- Version 1 --------------------
+// function isEnoughCapacity(products, containerSize) {
+//     let totalProducts = 0;
+//     for (let product in products) {
+//         if (products.hasOwnProperty(product)) {
+//             totalProducts += products[product];
+//         }
+//     }
 
-// function makeTransaction(quantity, pricePerDroid, customerCredits) {
-// let totalPrice = quantity*pricePerDroid;
-// if (customerCredits < totalPrice) {
-// return `Insufficient funds!`;
-// } else {
-//     return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+//     return totalProducts <= containerSize;
 // }
-// }
-
-// ----------------- Version 2 --------------------
-
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    let totalPrice = quantity*pricePerDroid;
-    return (customerCredits < totalPrice) ? `Insufficient funds!` : `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-}
 
 
+function isEnoughCapacity(products, containerSize) {
+let totalProdAmont = 0;
+let singleProdAmount = Object.values(products); 
+    for (const product in products){
+        totalProdAmont += singleProdAmount;
+    }
+    if (totalProdAmont <= containerSize) {
+        console.log("Ok");
+    } else {
+        console.log("NOk");
+    }
+};
 
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+// function isEnoughCapacity(products, containerSize) {
+//     let totalProdAmont = 0;
+
+//     for (let product in products){
+//         totalProdAmont += Object.values(product);
+//     }
+//     ;
+//         if (totalProdAmont <= containerSize) {
+//             console.log("Ok");
+//         } else {
+//             console.log("NOk");
+//         }
+//     };
+
+
+console.log(
+    isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+  ); // true
+  
+  console.log(
+    isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+  ); // false
+  
+  console.log(
+    isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+  ); // true
+  
+  console.log(
+    isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+  ); // false
