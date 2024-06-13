@@ -19,9 +19,8 @@ let singleProdAmount = Object.values(products);
         }
     if (totalProdAmount <= containerSize) {
         return true;
-    } else {
-        return false;
-    }
+    } 
+    return false;
 };
 
 
